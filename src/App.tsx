@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import { InputField } from './components/InputField';
 import { Todo } from './model'
+import ToDoList from './components/ToDoList';
 
 
 
@@ -25,9 +26,7 @@ const handleAdd = (e: React.FormEvent)=> {
       <span className='heading'>Taskify</span>
       <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
 
-      {todos.map((t) => (
-        <li>{t.todo}</li>
-      ))}
+      <ToDoList todos={todos} setTodos={setTodos} />
     </div>
   );
 }
