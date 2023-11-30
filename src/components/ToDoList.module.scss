@@ -1,3 +1,10 @@
+.container {
+  width: 95%;
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
 .todos {
     border-radius: 5px;
     display: flex;
@@ -6,3 +13,33 @@
     padding: 15px;
     background-color: rgb(50, 195, 205);
   }
+  .dragactive {
+    background-color: rgb(0, 221, 236);
+  }
+
+  .todos__heading {
+    font-size: 30px;
+    /* text-align: center; */
+    color: white;
+  }
+  .remove {
+    background-color: rgb(235, 103, 80);
+  }
+  
+@media (max-width: 1100px) {
+  .todos {
+    width: 45%;
+  }
+}
+
+@media (max-width: 700px) {
+
+  .container {
+    width: 95%;
+    flex-direction: column;
+  }
+  .todos {
+    width: 95%;
+    margin-bottom: 10px;
+  }
+}

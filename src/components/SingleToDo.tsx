@@ -5,12 +5,13 @@ import { AiFillEdit } from 'react-icons/ai';
 import { MdDone } from 'react-icons/md';
 
 type Props = {
+  index: number;
   todo: Todo;
   todos: Todo[];
   setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
 };
 
-const SingleToDo = ({ todo, todos, setTodos }: Props) => {
+const SingleToDo = ({index, todo, todos, setTodos }: Props) => {
     const [edit, setEdit] = useState<boolean>(false); 
     const [editTodo, setEditTodo] = useState<string>(todo.todo);
     
@@ -45,7 +46,7 @@ const inputRef = useRef<HTMLInputElement>(null);
 
   return (
     <form
-     className={styles.todos__Single}
+     className={styles.todos__single}
      onSubmit={(e) => {handleEdit(e, todo.id)}}
      >
       {edit ? (
